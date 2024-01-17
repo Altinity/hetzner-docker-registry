@@ -122,11 +122,11 @@ def cloud(
 
     with Action("upload script to server"):
         shell(
-            f"scp -o UserKnownHostsFile=/dev/null scripts/local.py root@{ip_address(server=server)}:/root/setup-local-registry.py"
+            f"scp -o UserKnownHostsFile=/dev/null scripts/local.py root@{ip_address(server=server)}:/root/docker-local-registry.py"
         )
 
     with Action(f"execute registry setup on {server.name}"):
         ssh(
             server,
-            f"python3 /root/setup-local-registry.py --registry-name {registry_name}",
+            f"python3 /root/docker-local-registry.py --registry-name {registry_name}",
         )
