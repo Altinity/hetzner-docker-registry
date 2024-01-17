@@ -1,14 +1,14 @@
-# hetzner-docker-registry
+# Hetzner Docker Registry
 Setup a local docker registry or provision a Hetzner Cloud instance and create a docker registry there. The docker registry is setup as a service using the `distribution/distribution:2.8.3` image. Uses 5000 and 5001 ports.
 
 ## Local
-Docker registry can be setup locally through either `docker-registry.py --local` or `local.py`.
+Docker registry can be setup locally through either `docker-registry.py --local` or `local.py`.  
 Inputs:
 * `--debug`, default: `False`.
 * `--registry-name`, name of the docker registry, default: `docker_registry_cache`.
 
 ## Cloud
-Docker registry can be setup remotely through `docker-registry.py --cloud`. This will provision a Hetzner Cloud instance, upload `local.py` script as `docker-local-registry.py`, and executed on it on the instance.
+Docker registry can be setup remotely through `docker-registry.py --cloud`. This will provision a Hetzner Cloud instance, upload `local.py` script as `docker-local-registry.py`, and executed on it on the instance.  
 Inputs:
 * `--heztner-token`, Hetzner API token used to create Hetzner Cloud instance, default: env var `HETZNER_TOKEN`.  
 * `--registry-name`, Name of the docker registry, default: `docker_registry_cache`.  
